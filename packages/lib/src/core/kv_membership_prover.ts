@@ -12,7 +12,7 @@ import wasm, { init } from "../wasm";
 /**
  * ECDSA Membership Prover
  */
-export class KVMembershipSecretProver extends Profiler implements IProver {
+export class KVMembershipProver extends Profiler implements IProver {
   circuit: string;
   witnessGenWasm: string;
 

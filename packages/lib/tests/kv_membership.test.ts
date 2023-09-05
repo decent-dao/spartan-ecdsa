@@ -1,6 +1,6 @@
 import {
-  KVMembershipSecretProver,
-  KVMembershipSecretVerifier,
+  KVMembershipProver,
+  KVMembershipVerifier,
   Poseidon,
   LumenNIZK
 } from "../src/lib";
@@ -46,7 +46,7 @@ describe("kv_membership", () => {
       )
     };
 
-    let kvMembershipVerifier: KVMembershipSecretVerifier, nizk: LumenNIZK;
+    let kvMembershipVerifier: KVMembershipVerifier, nizk: LumenNIZK;
 
     let signingKey: SigningKey
     let wallet: ethers.Wallet
@@ -58,7 +58,7 @@ describe("kv_membership", () => {
     let hPubKeySecret: bigint
 
     beforeAll(async () => {
-      kvMembershipVerifier = new KVMembershipSecretVerifier({
+      kvMembershipVerifier = new KVMembershipVerifier({
         circuit: config.circuit
       });
 
@@ -91,7 +91,7 @@ describe("kv_membership", () => {
 
       it("should prove and verify valid signature and merkle proof inclusion", async () => {
 
-        const kvyMembershipProver = new KVMembershipSecretProver(config);
+        const kvyMembershipProver = new KVMembershipProver(config);
         await kvyMembershipProver.initWasm();
 
         const proverClaimValue = 10000;
@@ -132,7 +132,7 @@ describe("kv_membership", () => {
       // This test creates a panic in the circuit and verifies that the panic is detected.
       try {
 
-        const kvyMembershipProver = new KVMembershipSecretProver(config);
+        const kvyMembershipProver = new KVMembershipProver(config);
         await kvyMembershipProver.initWasm();
         const proverSourceValue = 10000;
         const proverClaimValue = 100000;
