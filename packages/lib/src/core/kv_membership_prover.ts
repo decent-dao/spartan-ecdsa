@@ -5,7 +5,7 @@ import {
   PublicInput,
   computeEffEcdsaPubInput,
   KVCircuitPubInput
-} from "../helpers/kv_public_input";
+} from "../helpers/KvPublicInput";
 import wasm, { init } from "../wasm";
 
 

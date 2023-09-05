@@ -2,12 +2,12 @@ import { Profiler } from "../helpers/profiler";
 import { loadCircuit } from "../helpers/utils";
 import { IVerifier, VerifyConfig } from "../types";
 import wasm, { init } from "../wasm";
-import { PublicInput, verifyEffEcdsaPubInput } from "../helpers/kv_public_input";
+import { PublicInput, verifyEffEcdsaPubInput } from "../helpers/KvPublicInput";
 
 /**
  * ECDSA Membership Verifier
  */
-export class KVMembershipSecretVerifier extends Profiler implements IVerifier {
+export class KVMembershipVerifier extends Profiler implements IVerifier {
   circuit: string;
 
   constructor(options: VerifyConfig) {

@@ -1,5 +1,5 @@
 import { PublicInput } from "./helpers/public_input";
-import { PublicInput as LumenPublicInput } from "./helpers/kv_public_input";
+import { PublicInput as LumenPublicInput } from "./helpers/KvPublicInput";
 // The same structure as MerkleProof in @zk-kit/incremental-merkle-tree.
 // Not directly using MerkleProof defined in @zk-kit/incremental-merkle-tree so
 // library users can choose whatever merkle tree management method they want.
